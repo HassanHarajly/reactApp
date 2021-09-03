@@ -18,7 +18,7 @@ function App() {
           Learn React
         </a>
 
-        <span>Dog facts:</span>
+        <span>Dog Facts: random fact</span>
       </header>
     </div>
   );
