@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import DogFacts from "./DogFacts"
-import {Component} from "react";
 
 
 function App() {
