@@ -1,11 +1,10 @@
 import React from "react";
-
+import {callDogFactsApi} from "./CallDogApi"
 export default class DogFacts extends React.Component {
-     facts;
     render() {
         const { facts } = this.state;
         return (
-            <span>Dog Facts: random fact {facts}</span>
+            <span>Dog Facts: {facts}</span>
         );
     }
     constructor(props) {
@@ -15,15 +14,13 @@ export default class DogFacts extends React.Component {
         };
     }
     componentDidMount() {
-        fetch('http://localhost:8080/hello', {
-            method: 'GET'
-        })
-            .then(res => res.json())
-            .then(({facts}) => {
-                this.setState({
-                    facts: facts
-                });
-            })
-            .catch(console.log)
+        callDogFactsApi().then((facts) => {
+            this.setState({
+                facts: facts
+            });
+        });
     }
+
+
+
 }
